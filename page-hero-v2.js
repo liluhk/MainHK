@@ -174,9 +174,8 @@ function HeroKinetic({ onExplore }) {
       <div className="hk-hero-kinetic-copy" style={{ textAlign: "center", padding: "48px 32px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", maxWidth: "860px", margin: "0 auto" }}>
         <span style={{ ...heroV2Eyebrow, color: "var(--text-faint)" }}>Chef-made · Delivered daily in Dubai</span>
         <h1 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.05, fontSize: "clamp(38px, 4.2vw, 64px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>
-          <span className="hk-hero-word">Personalized</span>{" "}
-          <HeroRotatingWord words={["functional", "dairy-free", "gluten-free", "sugar-free"]} />{" "}
-          <span className="hk-hero-word">meal plans</span>
+          <span className="hk-hero-line1"><span className="hk-hero-word">Personalized</span>{" "}<HeroRotatingWord words={["functional", "dairy-free", "gluten-free", "sugar-free"]} /></span>{" "}
+          <span className="hk-hero-line2">meal plans</span>
         </h1>
         <p style={{ margin: 0, fontFamily: "var(--font-body)", fontSize: "16px", lineHeight: 1.55, color: "var(--text-muted)", whiteSpace: "nowrap" }}>
           Clean, simple, and built around your body — cooked fresh every morning, delivered before noon
@@ -188,9 +187,6 @@ function HeroKinetic({ onExplore }) {
       </div>
       <div className="hk-hero-kinetic-band" style={{ position: "relative", height: "400px", marginTop: "40px" }}>
         <div style={{ position: "absolute", inset: 0, background: `url('${HK_HERO_PHOTO}') center 42% / cover` }}></div>
-        <div style={{ position: "absolute", left: "50%", bottom: "18px", transform: "translateX(-50%)" }}>
-          <HeroScrollCue />
-        </div>
       </div>
     </section>
   );
