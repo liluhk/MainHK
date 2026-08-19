@@ -131,11 +131,12 @@
 
 /* ---------- Quote strip ---------- */
 @media (max-width: 640px) {
-  .hk-quote-row { flex-direction: column !important; gap: 18px !important; padding: 24px 16px !important; align-items: flex-start !important; }
-  .hk-quote-text { font-size: min(5.6vw, 22px) !important; }
-  .hk-quote-line-last { font-size: 0.82em; }
-  .hk-quote-author { flex-direction: row !important; align-items: center !important; gap: 12px !important; }
-  .hk-quote-photo { width: 62px !important; height: 62px !important; }
+  .hk-quote > div { padding: 20px 12px !important; gap: 10px !important; }
+  .hk-quote p { font-size: 15px !important; line-height: 1.5 !important; }
+  .hk-quote img { width: 68px !important; height: 68px !important; }
+  .hk-quote > div > div:last-child { max-width: 100px; }
+  .hk-quote > div > div:last-child span:last-child { font-size: 10px !important; line-height: 1.3; }
+  .hk-quote > span { font-size: 88px !important; left: 4px !important; top: -14px !important; }
 }
 
 /* ---------- Plan hero title ---------- */
