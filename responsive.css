@@ -129,6 +129,15 @@
   .hk-muscleacc-panel h3 { font-size: 20px !important; }
 }
 
+/* ---------- Quote strip ---------- */
+@media (max-width: 640px) {
+  .hk-quote-row { flex-direction: column !important; gap: 18px !important; padding: 24px 16px !important; align-items: flex-start !important; }
+  .hk-quote-text { font-size: min(5.6vw, 22px) !important; }
+  .hk-quote-line-last { font-size: 0.82em; }
+  .hk-quote-author { flex-direction: row !important; align-items: center !important; gap: 12px !important; }
+  .hk-quote-photo { width: 62px !important; height: 62px !important; }
+}
+
 /* ---------- Plan hero title ---------- */
 @media (max-width: 900px) {
   .hk-plan-title { white-space: normal !important; font-size: clamp(30px, 6.4vw, 44px) !important; line-height: 1.06 !important; }

@@ -158,9 +158,9 @@ function HeroRotatingWord({ words, interval = 2200 }) {
     return () => clearInterval(t);
   }, []);
   return (
-    <span style={{ display: "inline-grid", textAlign: "left" }}>
+    <span style={{ display: "inline-grid", textAlign: "left", isolation: "isolate" }}>
       {words.map((w, k) => (
-        <span key={w} style={{ gridArea: "1 / 1", fontStyle: "italic", fontWeight: 700, color: "var(--green-600)", visibility: k === i ? "visible" : "hidden", opacity: k === i && visible ? 1 : 0, transform: k === i && visible ? "translateY(0)" : "translateY(12px)", transition: "opacity 0.26s ease, transform 0.26s ease" }}>
+        <span key={w} style={{ gridArea: "1 / 1", fontStyle: "italic", fontWeight: 700, color: "var(--green-600)", padding: "0 0.14em", margin: "0 -0.14em", willChange: "opacity, transform", visibility: k === i ? "visible" : "hidden", opacity: k === i && visible ? 1 : 0, transform: k === i && visible ? "translateY(0)" : "translateY(12px)", transition: "opacity 0.26s ease, transform 0.26s ease" }}>
           {w}
         </span>
       ))}
