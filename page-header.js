@@ -17,9 +17,10 @@ function Header({ cartCount = 0, onNav, onHome, onCart, onSelectPlan }) {
   const links = ["Meal Plans", "Consultations", "Intolerance Testing", "Blog", "About Us"];
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [plansOpen, setPlansOpen] = React.useState(false);
+  const [mPlansOpen, setMPlansOpen] = React.useState(false);
   const plans = window.HK_PLANS || [];
 
-  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [menuOpen, plansOpen]);
+  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [menuOpen, plansOpen, mPlansOpen]);
 
   const nav = (l) => { setMenuOpen(false); onNav && onNav(l); };
 
@@ -116,18 +117,56 @@ function Header({ cartCount = 0, onNav, onHome, onCart, onSelectPlan }) {
       </div>
 
       <div style={{
-        maxHeight: menuOpen ? "420px" : "0px", overflow: "hidden",
+        maxHeight: menuOpen ? (mPlansOpen ? "1200px" : "460px") : "0px", overflow: "hidden",
         transition: "max-height var(--dur-slow) var(--ease-out)",
         borderTop: menuOpen ? "1px solid var(--border-subtle)" : "none",
         background: "var(--bg-page)",
       }}>
         <nav style={{ display: "flex", flexDirection: "column", padding: "8px 24px 20px" }}>
           {links.map((l) => (
-            <button key={l} onClick={() => nav(l)} style={{
-              background: "none", border: 0, borderBottom: "1px solid var(--border-subtle)", cursor: "pointer", textAlign: "left",
-              padding: "16px 4px", fontFamily: "var(--font-body)", fontSize: "15px", fontWeight: 500,
-              textTransform: "uppercase", letterSpacing: "var(--tracking-wide)", color: "var(--text-body)",
-            }}>{l}</button>
+            l === "Meal Plans" ? (
+              <div key={l} style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+                <div style={{ display: "flex", alignItems: "stretch" }}>
+                  <button onClick={() => nav(l)} style={{
+                    flex: 1, background: "none", border: 0, cursor: "pointer", textAlign: "left",
+                    padding: "16px 4px", fontFamily: "var(--font-body)", fontSize: "15px", fontWeight: 500,
+                    textTransform: "uppercase", letterSpacing: "var(--tracking-wide)", color: "var(--text-body)",
+                  }}>{l}</button>
+                  <button
+                    onClick={() => setMPlansOpen((o) => !o)}
+                    aria-label={mPlansOpen ? "Hide plans" : "Show plans"}
+                    aria-expanded={mPlansOpen}
+                    style={{
+                      background: "none", border: 0, cursor: "pointer", width: "48px", minHeight: "48px",
+                      display: "flex", alignItems: "center", justifyContent: "center", color: "var(--green-700)",
+                    }}
+                  >
+                    <i data-lucide="chevron-down" style={{ width: 18, height: 18, transform: mPlansOpen ? "rotate(180deg)" : "none", transition: "transform var(--dur-base) var(--ease-out)" }}></i>
+                  </button>
+                </div>
+                <div style={{ maxHeight: mPlansOpen ? "760px" : "0px", overflow: "hidden", transition: "max-height var(--dur-slow) var(--ease-out)" }}>
+                  <div style={{ display: "flex", flexDirection: "column", paddingBottom: "10px" }}>
+                    {plans.map((p) => (
+                      <button
+                        key={p.slug}
+                        onClick={() => { setMenuOpen(false); setMPlansOpen(false); onSelectPlan ? onSelectPlan(p) : onNav && onNav(l); }}
+                        style={{
+                          background: "none", border: 0, cursor: "pointer", textAlign: "left",
+                          padding: "13px 4px 13px 16px", minHeight: "46px", borderLeft: "2px solid var(--green-100)",
+                          fontFamily: "var(--font-body)", fontSize: "14px", color: "var(--text-body)",
+                        }}
+                      >{p.name || p.title}</button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <button key={l} onClick={() => nav(l)} style={{
+                background: "none", border: 0, borderBottom: "1px solid var(--border-subtle)", cursor: "pointer", textAlign: "left",
+                padding: "16px 4px", fontFamily: "var(--font-body)", fontSize: "15px", fontWeight: 500,
+                textTransform: "uppercase", letterSpacing: "var(--tracking-wide)", color: "var(--text-body)",
+              }}>{l}</button>
+            )
           ))}
           <div style={{ marginTop: "18px" }}>
             <Button variant="primary" size="md" fullWidth onClick={() => nav("Meal Plans")}>Explore Meal Plans</Button>

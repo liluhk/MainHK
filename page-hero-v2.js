@@ -170,8 +170,8 @@ function HeroRotatingWord({ words, interval = 2200 }) {
 
 function HeroKinetic({ onExplore }) {
   return (
-    <section style={{ position: "relative", background: "var(--bg-page)", overflow: "hidden" }}>
-      <div style={{ textAlign: "center", padding: "48px 32px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", maxWidth: "860px", margin: "0 auto" }}>
+    <section className="hk-hero-kinetic" style={{ position: "relative", background: "var(--bg-page)", overflow: "hidden" }}>
+      <div className="hk-hero-kinetic-copy" style={{ textAlign: "center", padding: "48px 32px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", maxWidth: "860px", margin: "0 auto" }}>
         <span style={{ ...heroV2Eyebrow, color: "var(--text-faint)" }}>Chef-made · Delivered daily in Dubai</span>
         <h1 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.05, fontSize: "clamp(38px, 4.2vw, 64px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>
           Personalized{" "}
@@ -186,7 +186,7 @@ function HeroKinetic({ onExplore }) {
           <Button variant="ghost" size="lg">WhatsApp Us</Button>
         </div>
       </div>
-      <div style={{ position: "relative", height: "400px", marginTop: "40px" }}>
+      <div className="hk-hero-kinetic-band" style={{ position: "relative", height: "400px", marginTop: "40px" }}>
         <div style={{ position: "absolute", inset: 0, background: `url('${HK_HERO_PHOTO}') center 42% / cover` }}></div>
         <div style={{ position: "absolute", left: "50%", bottom: "18px", transform: "translateX(-50%)" }}>
           <HeroScrollCue />

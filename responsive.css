@@ -89,3 +89,59 @@
   .hk-ingmodal-pad-body { padding-left: 20px !important; padding-right: 20px !important; }
   .hk-ingmodal-pad-foot { padding-left: 20px !important; padding-right: 20px !important; }
 }
+
+/* ---------- Home hero (kinetic) ---------- */
+@media (max-width: 900px) {
+  .hk-hero-kinetic-copy h1 { white-space: normal !important; font-size: clamp(30px, 7.4vw, 46px) !important; line-height: 1.08 !important; }
+  .hk-hero-kinetic-copy h1 > span { display: inline-grid !important; }
+  .hk-hero-kinetic-copy p { white-space: normal !important; font-size: 15px !important; }
+}
+@media (max-width: 640px) {
+  .hk-hero-kinetic-copy { padding: 28px 20px 0 !important; gap: 12px !important; }
+  .hk-hero-kinetic-band { height: 240px !important; margin-top: 26px !important; }
+}
+@media (max-width: 400px) {
+  .hk-hero-kinetic-band { height: 200px !important; }
+}
+
+/* ---------- Centered statement headings ---------- */
+@media (max-width: 900px) {
+  .hk-statement, .hk-statement span { white-space: normal !important; }
+  .hk-statement { font-size: clamp(26px, 5.4vw, 40px) !important; }
+}
+@media (max-width: 640px) {
+  .hk-statement { font-size: clamp(24px, 6.6vw, 32px) !important; text-wrap: balance; }
+}
+
+/* ---------- Accordion cards: tap affordance on mobile ---------- */
+@media (max-width: 760px) {
+  .hk-muscleacc-panel { padding: 18px 52px 18px 18px !important; }
+  .hk-muscleacc-panel::after {
+    content: "+"; position: absolute; right: 14px; top: 14px; width: 28px; height: 28px;
+    border-radius: 999px; border: 1px solid rgba(253,252,248,0.35); display: flex;
+    align-items: center; justify-content: center; font-size: 17px; line-height: 1;
+    color: var(--ivory-50); opacity: 0.8;
+  }
+  .hk-muscleacc-panel[aria-selected="true"]::after { content: "–"; background: rgba(253,252,248,0.18); opacity: 1; }
+  .hk-muscleacc-panel h3 { font-size: 20px !important; }
+}
+
+/* ---------- Plan hero title ---------- */
+@media (max-width: 900px) {
+  .hk-plan-title { white-space: normal !important; font-size: clamp(30px, 6.4vw, 44px) !important; line-height: 1.06 !important; }
+}
+
+/* ---------- Footer: compact on mobile ---------- */@media (max-width: 640px) {
+  .hk-footer-grid { padding: 36px 16px 24px !important; gap: 26px !important; }
+  .hk-footer-logo { height: 56px !important; }
+  .hk-footer-brand p { margin-top: 12px !important; font-size: 13px !important; }
+  .hk-footer-col h4 { margin-bottom: 10px !important; }
+  .hk-footer-col ul { gap: 8px !important; }
+  .hk-footer-col p { font-size: 19px !important; margin-bottom: 10px !important; }
+  .hk-footer-bottom { padding: 14px 16px !important; font-size: 11px !important; }
+}
+@media (max-width: 480px) {
+  .hk-footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .hk-footer-brand { grid-column: 1 / -1; }
+  .hk-footer-col:last-of-type { grid-column: 1 / -1; }
+}

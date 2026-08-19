@@ -43,11 +43,12 @@ function Footer({ onNav }) {
         aria-hidden="true"
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.02, pointerEvents: "none" }}
       />
-      <div className="hk-container hk-grid-4" style={{ position: "relative", maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr", gap: "40px" }}>
-        <div>
+      <div className="hk-container hk-grid-4 hk-footer-grid" style={{ position: "relative", maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr", gap: "40px" }}>
+        <div className="hk-footer-brand">
           <img
             src={window.HK_LOGO_SRC || ((window.HK_ASSET_BASE || "") + "assets/brand/healthy-kitchen-logo.png")}
             alt="Healthy Kitchen — Healing food delivery"
+            className="hk-footer-logo"
             style={{ height: "82px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }}
           />
           <p style={{ marginTop: "20px", fontFamily: "var(--font-body)", fontSize: "14px", lineHeight: 1.6, color: "var(--green-200)", maxWidth: "30ch" }}>
@@ -55,7 +56,7 @@ function Footer({ onNav }) {
           </p>
         </div>
         {cols.map((c) => (
-          <div key={c.head}>
+          <div key={c.head} className="hk-footer-col">
             <h4 style={{ margin: "0 0 16px", fontFamily: "var(--font-body)", fontSize: "11px", textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--green-300)" }}>{c.head}</h4>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "11px" }}>
               {c.items.map((i) => (
@@ -64,7 +65,7 @@ function Footer({ onNav }) {
             </ul>
           </div>
         ))}
-        <div>
+        <div className="hk-footer-col">
           <h4 style={{ margin: "0 0 16px", fontFamily: "var(--font-body)", fontSize: "11px", textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--green-300)" }}>Get in touch</h4>
           <p style={{ margin: "0 0 14px", fontFamily: "var(--font-display)", fontSize: "22px", color: "var(--ivory-50)" }}>+971 58 512 97 92</p>
           <div style={{ display: "flex", gap: "12px" }}>

@@ -362,7 +362,7 @@ function ProductDetail({ plan, onBack, onAdd }) {
               <>
                 <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                   <span style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--text-faint)" }}>{heroSpec.eyebrow}</span>
-                  <h1 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.02em", lineHeight: 1, fontSize: "clamp(34px, 5vw, 58px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>{plan.name}</h1>
+                  <h1 className="hk-plan-title" style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "0.02em", lineHeight: 1, fontSize: "clamp(34px, 5vw, 58px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>{plan.name}</h1>
                   {heroSpec.hook && <p style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 400, lineHeight: 1.25, fontSize: "22px", color: "var(--text-strong)" }}>{heroSpec.hook}</p>}
                   <p style={{ margin: 0, fontSize: "18px", lineHeight: 1.55, color: "var(--text-muted)", maxWidth: "46ch" }}>{plan.long || plan.blurb}</p>
                   <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>

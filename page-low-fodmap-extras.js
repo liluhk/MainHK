@@ -16,7 +16,7 @@ function LowFodmapGamble() {
     <section style={{ background: "var(--bg-page)" }}>
       <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "84px 32px 96px" }}>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "56px" }}>
-          <h2 style={{ margin: 0, textAlign: "center", fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.08, fontSize: "clamp(15px, 4.2vw, 48px)" }}>
+          <h2 className="hk-statement" style={{ margin: 0, textAlign: "center", fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.08, fontSize: "clamp(28px, 4.2vw, 48px)" }}>
             <span style={{ display: "block", color: "var(--text-strong)", whiteSpace: "nowrap" }}>When every meal</span>
             <span style={{ display: "block", color: "var(--green-700)", whiteSpace: "nowrap", fontStyle: "italic" }}>feels like a gamble</span>
           </h2>
@@ -36,7 +36,7 @@ function LowFodmapGamble() {
           ))}
         </div>
         <div style={{ borderTop: "1px solid var(--border-default)", marginTop: "64px", paddingTop: "56px", textAlign: "center" }}>
-          <p style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.2, fontSize: "clamp(28px, 3.6vw, 42px)", color: "var(--text-strong)" }}>
+          <p className="hk-statement" style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.2, fontSize: "clamp(28px, 3.6vw, 42px)", color: "var(--text-strong)" }}>
             You don't need another diet  <span style={{ display: "block", color: "var(--green-700)", fontStyle: "italic" }}>You need a structured protocol</span>
           </p>
         </div>
@@ -88,6 +88,9 @@ function LowFodmapPhases() {
   ];
   const [active, setActive] = React.useState(0);
   const [paused, setPaused] = React.useState(false);
+  const resumeRef = React.useRef(null);
+  const pauseTemporarily = () => { setPaused(true); clearTimeout(resumeRef.current); resumeRef.current = setTimeout(() => setPaused(false), 9000); };
+  React.useEffect(() => () => clearTimeout(resumeRef.current), []);
 
   React.useEffect(() => {
     if (paused) return;
@@ -121,9 +124,9 @@ function LowFodmapPhases() {
                 key={it.n}
                 role="tab"
                 aria-selected={isActive}
-                onMouseEnter={() => { setActive(i); setPaused(true); }}
-                onFocus={() => { setActive(i); setPaused(true); }}
-                onClick={() => { setActive(i); setPaused(true); }}
+                onMouseEnter={() => { setActive(i); pauseTemporarily(); }}
+                onFocus={() => { setActive(i); pauseTemporarily(); }}
+                onClick={() => { setActive(i); pauseTemporarily(); }}
                 className="hk-muscleacc-panel"
                 style={{
                   flex: isActive ? "2.4 1 0%" : "1 1 0%", minWidth: 0,
@@ -156,7 +159,7 @@ function LowFodmapPhases() {
               <span key={it.n} style={{ flex: 1, height: "2px", background: i === active ? "var(--ivory-50)" : "rgba(253,252,248,0.18)", transition: "background 0.4s ease" }}></span>
             ))}
           </div>
-          <span style={{ fontSize: "12px", letterSpacing: "var(--tracking-wider)", color: "var(--green-200)" }}>{items[active].n} / 03</span>
+          <span style={{ fontSize: "12px", letterSpacing: "var(--tracking-wider)", color: "var(--green-200)" }}>{items[active].n} / {String(items.length).padStart(2, "0")}</span>
         </div>
 
         <p style={{ margin: "26px 0 0", fontSize: "15px", lineHeight: 1.6, color: "var(--green-100)", textAlign: "center" }}>After your 21 days, our experts help you plan Phase 2 reintroduction — at no extra cost, as part of your reset.</p>

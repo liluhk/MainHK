@@ -16,7 +16,7 @@ function LongevityEvidence() {
     <section style={{ background: "var(--bg-page)" }}>
       <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "84px 32px 96px" }}>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "56px" }}>
-          <h2 style={{ margin: 0, textAlign: "center", fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.08, fontSize: "clamp(28px, 4.2vw, 48px)" }}>
+          <h2 className="hk-statement" style={{ margin: 0, textAlign: "center", fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.08, fontSize: "clamp(28px, 4.2vw, 48px)" }}>
             <span style={{ display: "block", color: "var(--text-strong)", whiteSpace: "nowrap" }}>Built on the nutrition</span>
             <span style={{ display: "block", color: "var(--green-700)", whiteSpace: "nowrap", fontStyle: "italic" }}>that actually has evidence behind it</span>
           </h2>
@@ -37,7 +37,7 @@ function LongevityEvidence() {
           ))}
         </div>
         <div style={{ borderTop: "1px solid var(--border-default)", marginTop: "64px", paddingTop: "56px", textAlign: "center" }}>
-          <p style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.2, fontSize: "clamp(28px, 3.6vw, 42px)", color: "var(--text-strong)" }}>
+          <p className="hk-statement" style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 600, lineHeight: 1.2, fontSize: "clamp(28px, 3.6vw, 42px)", color: "var(--text-strong)" }}>
             No trends, no biohacks <span style={{ display: "block", color: "var(--green-700)", fontStyle: "italic" }}>Just the pattern from the places people live longest</span>
           </p>
         </div>
