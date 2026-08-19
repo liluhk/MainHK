@@ -132,7 +132,7 @@
 /* ---------- Quote strip ---------- */
 @media (max-width: 640px) {
   .hk-quote > div { padding: 20px 12px !important; gap: 10px !important; }
-  .hk-quote p { font-size: 15px !important; line-height: 1.5 !important; }
+  .hk-quote p { font-size: min(3.9vw, 19px) !important; line-height: 1.5 !important; }
   .hk-quote img { width: 68px !important; height: 68px !important; }
   .hk-quote > div > div:last-child { max-width: 100px; }
   .hk-quote > div > div:last-child span:last-child { font-size: 10px !important; line-height: 1.3; }
