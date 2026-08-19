@@ -93,7 +93,8 @@
 /* ---------- Home hero (kinetic) ---------- */
 @media (max-width: 900px) {
   .hk-hero-kinetic-copy h1 { white-space: normal !important; font-size: clamp(30px, 7.4vw, 46px) !important; line-height: 1.08 !important; }
-  .hk-hero-kinetic-copy h1 > span { display: inline-grid !important; }
+  .hk-hero-kinetic-copy h1 .hk-hero-word { display: block; }
+  .hk-hero-kinetic-copy h1 > span:not(.hk-hero-word) { display: grid !important; justify-items: center; text-align: center !important; }
   .hk-hero-kinetic-copy p { white-space: normal !important; font-size: 15px !important; }
 }
 @media (max-width: 640px) {
@@ -115,7 +116,8 @@
 
 /* ---------- Accordion cards: tap affordance on mobile ---------- */
 @media (max-width: 760px) {
-  .hk-muscleacc-panel { padding: 18px 52px 18px 18px !important; }
+  .hk-muscleacc { height: auto !important; }
+  .hk-muscleacc-panel { height: auto !important; padding: 18px 52px 18px 18px !important; }
   .hk-muscleacc-panel::after {
     content: "+"; position: absolute; right: 14px; top: 14px; width: 28px; height: 28px;
     border-radius: 999px; border: 1px solid rgba(253,252,248,0.35); display: flex;
