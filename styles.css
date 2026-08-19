@@ -1,0 +1,287 @@
+/* tokens/fonts.css */
+/* ============================================================
+   Healthy Kitchen — Webfonts
+   Libre Caslon Condensed  → editorial serif display
+   Roboto Condensed        → workhorse UI / body
+   Timeless Memories       → handwritten accent (use sparingly)
+   ============================================================ */
+
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  src: url("assets/fonts/LibreCaslonCondensed-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  src: url("assets/fonts/LibreCaslonCondensed-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("assets/fonts/RobotoCondensed-Variable.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Timeless Memories";
+  src: url("assets/fonts/TimelessMemories.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* tokens/colors.css */
+/* ============================================================
+   Healthy Kitchen — Color tokens
+   Anchored on the brand forest green (rgb 12,84,47 / #0C542F).
+   A calm, clean palette: forest greens, warm ivories, soft sage,
+   a quiet terracotta accent for editorial moments.
+   ============================================================ */
+
+:root {
+  /* ---- Brand green scale ---- */
+  --green-900: #06321c;
+  --green-800: #0a4527;
+  --green-700: #0c542f; /* core brand green */
+  --green-600: #176a3f;
+  --green-500: #2c8456;
+  --green-400: #5aa178;
+  --green-300: #93c2a6;
+  --green-200: #c8e0d2;
+  --green-100: #e7f1ea;
+  --green-50:  #f3f8f4;
+
+  /* ---- Warm neutral / ivory scale ---- */
+  --ivory-50:  #fdfcf8; /* page background */
+  --ivory-100: #f8f6ef;
+  --ivory-200: #efece1;
+  --ivory-300: #e2ddcd;
+  --sand-400:  #cfc7b2;
+
+  /* ---- Ink / charcoal ---- */
+  --ink-900: #1c211d;
+  --ink-700: #353a35;
+  --ink-500: #5c625b;
+  --ink-400: #828779;
+  --ink-300: #a8ac9f;
+
+  /* ---- Accent — quiet terracotta (used rarely, for warmth) ---- */
+  --clay-600: #b85c3c;
+  --clay-500: #cd6f4d;
+  --clay-100: #f5e3da;
+
+  /* ---- Gold (consultations / premium touches) ---- */
+  --gold-500: #b89343;
+  --gold-100: #f1e7cf;
+
+  /* ---- Pure ---- */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ---- Status ---- */
+  --success: #2c8456;
+  --warning: #b89343;
+  --error:   #b4452f;
+  --info:    #176a3f;
+
+  /* ============================================================
+     Semantic aliases — reference these in components
+     ============================================================ */
+  --bg-page:        var(--ivory-50);
+  --bg-subtle:      var(--ivory-100);
+  --bg-sunken:      var(--ivory-200);
+  --surface-card:   var(--white);
+  --surface-inverse: var(--green-700);
+  --surface-accent: var(--green-50);
+
+  --text-strong:    var(--ink-900);
+  --text-body:      var(--ink-700);
+  --text-muted:     var(--ink-500);
+  --text-faint:     var(--ink-400);
+  --text-on-green:  var(--ivory-50);
+  --text-on-green-muted: var(--green-200);
+  --text-brand:     var(--green-700);
+
+  --border-subtle:  var(--ivory-300);
+  --border-default: var(--sand-400);
+  --border-strong:  var(--green-700);
+
+  --accent:         var(--green-700);
+  --accent-hover:   var(--green-800);
+  --accent-press:   var(--green-900);
+  --accent-soft:    var(--green-100);
+
+  --focus-ring:     var(--green-500);
+}
+
+/* tokens/typography.css */
+/* ============================================================
+   Healthy Kitchen — Typography tokens
+   Display: Libre Caslon Condensed (editorial serif)
+   UI/Body: Roboto Condensed
+   Accent : Timeless Memories (handwritten, sparing)
+   Headlines are typically set in UPPERCASE with open tracking.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: "Libre Caslon Condensed", "Times New Roman", serif;
+  --font-body: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-script: "Timeless Memories", "Brush Script MT", cursive;
+
+  /* ---- Weights ---- */
+  --fw-light: 300;   /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500;  /* @kind font */
+  --fw-bold: 700;    /* @kind font */
+
+  /* ---- Type scale (rem, 16px base) ---- */
+  --text-2xs: 0.6875rem;  /* 11px - micro labels */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:  1.125rem;   /* 18px */
+  --text-lg:  1.375rem;   /* 22px */
+  --text-xl:  1.75rem;    /* 28px */
+  --text-2xl: 2.25rem;    /* 36px */
+  --text-3xl: 3rem;       /* 48px */
+  --text-4xl: 4rem;       /* 64px */
+  --text-5xl: 5.25rem;    /* 84px */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.02;
+  --leading-snug: 1.18;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.12em;   /* uppercase display */
+  --tracking-widest: 0.22em;  /* eyebrow / micro labels */
+
+  /* ---- Semantic roles ---- */
+  --role-hero-family: var(--font-display);
+  --role-hero-transform: uppercase; /* @kind other */
+  --role-eyebrow-family: var(--font-body);
+  --role-eyebrow-transform: uppercase; /* @kind other */
+}
+
+/* tokens/spacing.css */
+/* ============================================================
+   Healthy Kitchen — Spacing, radii, shadows, layout
+   Clean and minimal: generous whitespace, soft radii, low shadows.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 2.5rem;   /* 40 */
+  --space-8: 3rem;     /* 48 */
+  --space-9: 4rem;     /* 64 */
+  --space-10: 5rem;    /* 80 */
+  --space-11: 6rem;    /* 96 */
+  --space-12: 8rem;    /* 128 */
+
+  /* ---- Radii ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---- Borders ---- */
+  --border-hairline: 1px;
+  --border-thin: 1.5px;
+  --border-thick: 2px;
+
+  /* ---- Shadows — soft, low, warm-neutral ---- */
+  --shadow-xs: 0 1px 2px rgba(28, 33, 29, 0.05);
+  --shadow-sm: 0 2px 8px rgba(28, 33, 29, 0.06);
+  --shadow-md: 0 8px 24px rgba(28, 33, 29, 0.08);
+  --shadow-lg: 0 18px 48px rgba(28, 33, 29, 0.12);
+  --shadow-inset: inset 0 0 0 1px rgba(28, 33, 29, 0.06);
+
+  /* ---- Layout ---- */
+  --container-max: 1240px;
+  --container-narrow: 760px;
+  --gutter: var(--space-5);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-base: 240ms; /* @kind other */
+  --dur-slow: 420ms; /* @kind other */
+}
+
+/* base.css */
+/* ============================================================
+   Healthy Kitchen — base reset + component interaction states
+   Ships with the global stylesheet so consumers get hover/focus
+   behaviour for the React primitives.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--bg-page);
+}
+
+/* ---- Button hover / press ---- */
+.hk-btn-primary:hover:not(:disabled)   { background: var(--green-800); }
+.hk-btn-primary:active:not(:disabled)  { background: var(--green-900); transform: translateY(1px); }
+
+.hk-btn-secondary:hover:not(:disabled) { background: var(--ivory-300); }
+.hk-btn-secondary:active:not(:disabled){ transform: translateY(1px); }
+
+.hk-btn-ghost:hover:not(:disabled)     { background: var(--green-700); color: var(--ivory-50); }
+.hk-btn-ghost:active:not(:disabled)    { background: var(--green-800); border-color: var(--green-800); transform: translateY(1px); }
+
+.hk-btn-inverse:hover:not(:disabled)   { background: var(--white); }
+.hk-btn-inverse:active:not(:disabled)  { transform: translateY(1px); }
+
+.hk-btn-link:hover:not(:disabled)      { color: var(--green-800); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Input focus ---- */
+.hk-input:focus {
+  border-color: var(--green-600);
+  box-shadow: 0 0 0 3px var(--green-100);
+}
+.hk-input::placeholder { color: var(--ink-300); }
+
+/* ---- Card hover (used by ProductCard) ---- */
+.hk-card { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+.hk-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.hk-card:hover .hk-card-img { transform: scale(1.04); }
+.hk-card-img { transition: transform var(--dur-slow) var(--ease-out); }
+
+/* ---- Horizontal gallery rail ---- */
+.hk-rail { scrollbar-width: thin; scrollbar-color: var(--sand-400) transparent; }
+.hk-rail::-webkit-scrollbar { height: 6px; }
+.hk-rail::-webkit-scrollbar-thumb { background: var(--sand-400); border-radius: var(--radius-pill); }
+.hk-rail::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+

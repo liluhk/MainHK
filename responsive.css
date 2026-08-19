@@ -1,0 +1,91 @@
+/* Healthy Kitchen — Marketing site responsive layer.
+   Two breakpoints: tablet (<=1024px) and mobile (<=640px).
+   Rules here only ever touch layout-shifting properties (grid columns,
+   horizontal padding, sticky→static, show/hide) via !important so they can
+   win over the inline styles the components ship with — everything else
+   (color, type, spacing rhythm) stays exactly as authored per breakpoint. */
+
+/* ---------- Containers ---------- */
+@media (max-width: 1024px) {
+  .hk-container { padding-left: 24px !important; padding-right: 24px !important; }
+}
+@media (max-width: 640px) {
+  .hk-container { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* ---------- Generic grid collapses ---------- */
+@media (max-width: 1024px) {
+  .hk-grid-2 { grid-template-columns: 1fr !important; }
+  .hk-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .hk-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .hk-sticky { position: static !important; top: auto !important; }
+}
+@media (max-width: 640px) {
+  .hk-grid-3 { grid-template-columns: 1fr !important; }
+  .hk-grid-4 { grid-template-columns: 1fr !important; }
+}
+
+/* ---------- Header ---------- */
+.hk-nav-toggle { display: none; }
+@media (max-width: 1024px) {
+  .hk-nav-desktop { display: none !important; }
+  .hk-header-cta { display: none !important; }
+  .hk-nav-toggle { display: flex !important; }
+}
+@media (max-width: 480px) {
+  .hk-logo img { height: 40px !important; }
+}
+
+/* ---------- Hero ---------- */
+@media (max-width: 1024px) {
+  .hk-hero-grid { gap: 40px !important; }
+}
+
+/* ---------- Why Choose Us ---------- */
+@media (max-width: 640px) {
+  .hk-watermark { display: none !important; }
+}
+
+/* ---------- Promo signup form ---------- */
+@media (max-width: 640px) {
+  .hk-promo-form { flex-direction: column !important; }
+}
+
+/* ---------- Footer ---------- */
+@media (max-width: 640px) {
+  .hk-footer-bottom { flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
+}
+
+/* ---------- Checkout ---------- */
+@media (max-width: 640px) {
+  .hk-grid-2-tight { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 1024px) {
+  .hk-timeslot-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .hk-timeslot-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ---------- Payment ---------- */
+@media (max-width: 480px) {
+  .hk-payment-sim-row { flex-direction: column !important; }
+}
+
+/* ---------- Muscle UP: Why (accordion → stacked cards on mobile) ---------- */
+@media (max-width: 760px) {
+  .hk-muscleacc { flex-direction: column !important; }
+  .hk-muscleacc-panel { min-height: 0 !important; gap: 18px !important; transform: none !important; }
+}
+
+/* ---------- Muscle UP: The Gap heading offset ---------- */
+@media (max-width: 640px) {
+  .hk-gap-heading { margin-left: 0 !important; }
+}
+
+/* ---------- Ingredient modal ---------- */
+@media (max-width: 640px) {
+  .hk-ingmodal-pad-top { padding-left: 20px !important; padding-right: 20px !important; }
+  .hk-ingmodal-pad-body { padding-left: 20px !important; padding-right: 20px !important; }
+  .hk-ingmodal-pad-foot { padding-left: 20px !important; padding-right: 20px !important; }
+}

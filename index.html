@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Healthy Kitchen — Healing Food Delivery in Dubai</title>
+<meta name="description" content="Doctor-designed healing meal plans delivered fresh across Dubai — gut healing, longevity, AIP, low FODMAP, detox and more." />
+<link rel="icon" href="assets/brand/healthy-kitchen-logo.png" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="responsive.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); }
+  image-slot { border-radius: var(--radius-lg); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>window.HK_ASSET_BASE = "";</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="ds-bundle.js"></script>
+<script src="image-slot.js"></script>
+<script src="data.js?v=2"></script>
+<script src="intolerance-data.js"></script>
+
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="HeroV2.jsx"></script>
+<script type="text/babel" src="QuoteStrip.jsx"></script>
+<script type="text/babel" src="MealPlans.jsx"></script>
+<script type="text/babel" src="WhyChooseUs.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="BlogCard.jsx"></script>
+<script type="text/babel" src="BlogList.jsx"></script>
+<script type="text/babel" src="BlogArticle.jsx"></script>
+<script type="text/babel" src="MuscleUpExtras.jsx"></script>
+<script type="text/babel" src="MuscleUpMenuFAQ.jsx"></script>
+<script type="text/babel" src="LongevityExtras.jsx"></script>
+<script type="text/babel" src="LowFodmapExtras.jsx"></script>
+<script type="text/babel" src="AutoimmuneExtras.jsx"></script>
+<script type="text/babel" src="GutHealingExtras.jsx"></script>
+<script type="text/babel" src="AnticandidaExtras.jsx"></script>
+<script type="text/babel" src="EasyDetoxExtras.jsx"></script>
+<script type="text/babel" src="DetoxCleanseExtras.jsx"></script>
+<script type="text/babel" src="IngredientModal.jsx"></script>
+<script type="text/babel" src="ProductDetail.jsx"></script>
+<script type="text/babel" src="Checkout.jsx"></script>
+<script type="text/babel" src="AboutUs.jsx"></script>
+<script type="text/babel" src="PrivacyPolicy.jsx"></script>
+<script type="text/babel" src="TermsConditions.jsx"></script>
+<script type="text/babel" src="Consultations.jsx"></script>
+<script type="text/babel" src="IntoleranceTesting.jsx"></script>
+<script type="text/babel" src="Payment.jsx"></script>
+<script type="text/babel" src="App.jsx"></script>
+<script type="text/babel">
+  const mount = () => {
+    if (!window.App) { setTimeout(mount, 40); return; }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    if (window.lucide) window.lucide.createIcons();
+  };
+  mount();
+</script>
+</body>
+</html>
