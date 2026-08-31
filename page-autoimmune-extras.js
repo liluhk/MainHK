@@ -71,7 +71,7 @@ function AutoimmuneMenu() {
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {aipStat("8", "Food groups eliminated", true)}
             {aipStat("30+", "Plants / week")}
-            {aipStat("100%", <>AIP-compliant meals<br />/ day</>)}
+            {aipStat("100%", <>AIP-compliant<br />meals / day</>)}
             {aipStat("0", <>Immune triggers<br />on your plate</>)}
           </div>
         </div>

@@ -108,12 +108,12 @@ function PlanMenu({ menus = MU_MENUS, title = "See a full day of meals", totalTi
         </div>
 
         {showTotal && (
-        <div style={{ marginTop: "24px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "20px", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "32px 36px" }}>
+        <div className="hk-mu-total" style={{ marginTop: "24px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "20px", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "32px 36px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
             <span style={{ fontFamily: "var(--font-body)", fontSize: "11px", textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--green-200)" }}>Daily total · {menu.label}</span>
             <span style={{ fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontSize: "22px" }}>{totalTitle}</span>
           </div>
-          <div style={{ display: "flex", gap: "38px", flexWrap: "wrap", alignItems: "flex-end" }}>
+          <div className="hk-mu-total-stats" style={{ display: "flex", gap: "38px", flexWrap: "wrap", alignItems: "flex-end" }}>
             {muTotStat(tot.kcal.toLocaleString("en-US"), "kcal", true)}{muTotStat(tot.p + "g", "protein")}{muTotStat(tot.c + "g", "carbs")}{muTotStat(tot.f + "g", "fat")}
           </div>
         </div>

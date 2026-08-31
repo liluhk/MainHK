@@ -226,3 +226,11 @@
 @media (max-width: 900px) {
   html, body { overflow-x: hidden; max-width: 100%; }
 }
+
+/* ---------- Muscle UP daily-total band: all four stats on one row on mobile ---------- */
+@media (max-width: 640px) {
+  .hk-mu-total { padding: 22px 18px !important; gap: 14px !important; }
+  .hk-mu-total-stats { gap: 10px !important; flex-wrap: nowrap !important; width: 100%; justify-content: space-between; }
+  .hk-mu-total-stat > span:first-child { font-size: 27px !important; line-height: 1 !important; }
+  .hk-mu-total-stat > span:last-child { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: nowrap; }
+}

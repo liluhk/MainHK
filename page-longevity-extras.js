@@ -71,7 +71,7 @@ function LongevityMenu() {
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div className="hk-lg-band" style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {lgStat("35+", "Plant species / week", true)}
-            {lgStat("30–45ml", "Extra virgin olive oil / day")}
+            {lgStat("30–45ml", <>Extra virgin<br />olive oil / day</>)}
             {lgStat("3×", "Omega-3 rich foods / week")}
             {lgStat("0g", "Added sugar, gluten, dairy, seed oils")}
           </div>
