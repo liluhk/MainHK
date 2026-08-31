@@ -12,6 +12,22 @@ const DURATION_DISCOUNT = { 5: 0, 7: 0.02, 14: 0.05, 21: 0.08, 28: 0.12 };
 
 // Per-plan calculator overrides (mirrors the live site)
 const PLAN_CALC_OVERRIDES = {
+  "gut-healing": {
+    mealConfigs: [
+      { id: "full", label: "Full day", meals: "Breakfast · Lunch · Dinner · Snack", factor: 1.6, calories: ["1600–1800", "1900–2200"] },
+      { id: "am",   label: "AM",        meals: "Breakfast · Lunch · Snack",          factor: 1.0, calories: ["1000–1200", "1100–1300"] },
+      { id: "pm",   label: "PM",        meals: "Lunch · Dinner · Snack",             factor: 1.0, calories: ["1200–1400", "1300–1500"] },
+      { id: "main", label: "Main meals",meals: "Breakfast · Lunch · Dinner",         factor: 1.2, calories: ["1400–1500", "1500–1600"] },
+    ],
+  },
+  "low-fodmap": {
+    mealConfigs: [
+      { id: "full", label: "Full day", meals: "Breakfast · Lunch · Dinner · Snack", factor: 1.6, calories: ["1600–1800", "1900–2200"] },
+      { id: "am",   label: "AM",        meals: "Breakfast · Lunch · Snack",          factor: 1.0, calories: ["1000–1200", "1100–1300"] },
+      { id: "pm",   label: "PM",        meals: "Lunch · Dinner · Snack",             factor: 1.0, calories: ["1200–1400", "1300–1500"] },
+      { id: "main", label: "Main meals",meals: "Breakfast · Lunch · Dinner",         factor: 1.2, calories: ["1400–1500", "1500–1600"] },
+    ],
+  },
   "detox-cleanse": {
     mealConfigs: [
       { id: "full", label: "Full day", meals: "6 juices & smoothies", factor: 1.6, calories: ["1000–1200"] },
@@ -350,7 +366,7 @@ function ProductDetail({ plan, onBack, onAdd }) {
   return (
     <>
     <section style={{ background: "var(--bg-page)" }}>
-      <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "40px 32px 88px" }}>
+      <div className="hk-container hk-plan-hero" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "40px 32px 56px" }}>
         <button onClick={onBack} style={{ background: "none", border: 0, cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", fontFamily: "var(--font-body)", fontSize: "13px", textTransform: "uppercase", letterSpacing: "var(--tracking-wide)", color: "var(--text-muted)", marginBottom: "28px" }}>
           <i data-lucide="arrow-left" style={{ width: 16, height: 16 }}></i> All meal plans
         </button>

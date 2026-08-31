@@ -52,7 +52,8 @@ function Footer({ onNav }) {
             style={{ height: "82px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }}
           />
           <p style={{ marginTop: "20px", fontFamily: "var(--font-body)", fontSize: "14px", lineHeight: 1.6, color: "var(--green-200)", maxWidth: "30ch" }}>
-            Chef-made, gut-friendly meal plans delivered daily across Dubai, 7 AM–12 PM.
+            Chef-made, gut-friendly meal plans across Dubai.
+            <span style={{ display: "block" }}>Delivery 7 AM–12 PM.</span>
           </p>
         </div>
         {cols.map((c) => (

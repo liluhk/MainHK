@@ -66,12 +66,12 @@ function DetoxCleanseMenu() {
   );
   return (
     <>
-      <PlanMenu menus={DC_MENUS} showTotal={false} showMacros={false} sub="Six nutrient-packed juices and smoothies a day — vegetable and fruit juices, antioxidant berry blends, and hydrating, cleansing beverages. Fully vegan." />
+      <PlanMenu menus={DC_MENUS} title="See a full day detox" showTotal={false} showMacros={false} sub="Six nutrient-packed juices and smoothies a day — vegetable and fruit juices, antioxidant berry blends, and hydrating, cleansing beverages. Fully vegan." />
       <section style={{ background: "var(--bg-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {dcStat("85%", "Vegetable content", true)}
-            {dcStat("20+g", "Gut-restoring fiber per day")}
+            {dcStat("20+g", "Gut-restoring fiber / day")}
             {dcStat("100%", "Vegan, freshly squeezed")}
             {dcStat("0g", "Added sugar")}
           </div>
@@ -85,7 +85,7 @@ function DetoxCleanseMenu() {
 function DetoxCleansePhases() {
   const items = [
     { n: "01", icon: "droplets", cap: "All day · Six bottles", h: "Flood", p: "A high concentration of vitamins, minerals and antioxidants in the most digestible form there is. Leafy greens, ginger and citrus deliver detoxifying compounds and vitamin C from the first bottle." },
-    { n: "02", icon: "moon", cap: "While you cleanse · Digest less", h: "Rest", p: "With no solid food to process, our smoothies keep you nicely satisfied, your digestive system gets a genuine break — while hydrating, cleansing beverages support the kidneys and liver doing the detox work." },
+    { n: "02", icon: "moon", cap: "While you cleanse · Gut rest", h: "Rest", p: "With no solid food to process, our smoothies keep you nicely satisfied, your digestive system gets a genuine break — while hydrating, cleansing beverages support the kidneys and liver doing the detox work." },
     { n: "03", icon: "sun", cap: "After day 3 · Transition", h: "Glow", p: "Clearer skin, lighter digestion, a visible glow. Keep it to 3 days maximum — then transition to Easy Detox for a more comprehensive, balanced detoxification." },
   ];
   const [active, setActive] = React.useState(0);

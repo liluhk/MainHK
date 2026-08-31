@@ -1,6 +1,6 @@
 const { Button, Tag } = window.HealthyKitchenDesignSystem_f4c763;
 
-const HK_HERO_PHOTO = (window.HK_ASSET_BASE ?? "") + "assets/brand/hero-banner.jpg";
+const HK_HERO_PHOTO = (window.HK_ASSET_BASE ?? "") + "assets/brand/hero-banner-spread.jpg";
 
 const heroV2Eyebrow = {
   fontFamily: "var(--font-body)", fontSize: "12px", fontWeight: 500,

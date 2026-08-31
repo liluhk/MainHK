@@ -5,7 +5,7 @@ const HK_WHY_MARQUEE = ["Gluten-free", "Chef-crafted", "Nutritionist-designed", 
 const HK_WHY_ICONS = ["leaf", "sliders-horizontal", "brain", "chef-hat", "wheat-off", "recycle"];
 
 const HK_WHY_HOOKS = [
-  "Picked fresh, cooked the same day",
+  "Picked fresh,\ncooked the same day",
   "Your macros, your rules",
   "Menus built on nutrition science",
   "Restaurant craft in every box",
@@ -56,9 +56,9 @@ function WhyChooseUs({ onExplore }) {
           </p>
         </div>
 
-        <div className="hk-grid-2" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "72px", alignItems: "stretch" }}>
+        <div className="hk-grid-2 hk-why-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "72px", alignItems: "stretch" }}>
 
-          <div role="tablist" aria-label="Why choose us" onMouseLeave={() => setPaused(false)} style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="hk-why-tabs" role="tablist" aria-label="Why choose us" onMouseLeave={() => setPaused(false)} style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             {features.map((ft, i) => {
               const isActive = i === active;
               return (
@@ -69,6 +69,7 @@ function WhyChooseUs({ onExplore }) {
                   onMouseEnter={() => { setActive(i); setPaused(true); }}
                   onFocus={() => { setActive(i); setPaused(true); }}
                   onClick={() => { setActive(i); setPaused(true); }}
+                  className="hk-why-tab"
                   style={{
                     display: "grid", gridTemplateColumns: "52px 1fr auto", alignItems: "center", gap: "18px",
                     padding: "20px 18px", margin: 0, width: "100%", textAlign: "left",
@@ -91,13 +92,20 @@ function WhyChooseUs({ onExplore }) {
                     transform: isActive ? "rotate(45deg)" : "none",
                     transition: "all 0.35s ease", fontSize: "16px", lineHeight: 1,
                   }}>↑</span>
+                  <span className="hk-why-tab-icon" aria-hidden="true" style={{ position: "absolute", right: "-12px", bottom: "-16px", width: "104px", height: "104px", color: "var(--ivory-50)", opacity: isActive ? 0.16 : 0.08, pointerEvents: "none", transition: "opacity 0.45s ease" }}>
+                    <i data-lucide={HK_WHY_ICONS[i]} style={{ width: "104px", height: "104px" }}></i>
+                  </span>
+                  <div className="hk-why-inline" style={{ gridColumn: "1 / -1", maxHeight: isActive ? "340px" : "0px", opacity: isActive ? 1 : 0, overflow: "hidden", transition: "max-height 0.55s var(--ease-out), opacity 0.4s ease 0.12s" }}>
+                    <p style={{ margin: "2px 0 10px", fontFamily: "var(--font-script)", fontSize: "22px", lineHeight: 1.25, whiteSpace: "pre-line", color: "var(--green-200)" }}>{HK_WHY_HOOKS[i]}</p>
+                    <p style={{ margin: 0, fontFamily: "var(--font-body)", fontSize: "15px", lineHeight: 1.6, color: "var(--green-100)" }}>{ft.body}</p>
+                  </div>
                 </button>
               );
             })}
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "36px", minHeight: "420px" }}>
-            <div key={active} className="hk-why-anim" style={{ animation: "hkWhyIn 0.5s ease both" }}>
+          <div className="hk-why-right" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "36px", minHeight: "420px" }}>
+            <div key={active} className="hk-why-anim hk-why-visual" style={{ animation: "hkWhyIn 0.5s ease both" }}>
               <div aria-hidden="true" style={{ width: "128px", height: "128px", borderRadius: "50%", border: "1.5px solid var(--green-300)", background: "rgba(253,252,248,0.06)", display: "grid", placeItems: "center" }}>
                 <i data-lucide={HK_WHY_ICONS[active]} style={{ width: "58px", height: "58px", color: "var(--green-200)" }}></i>
               </div>

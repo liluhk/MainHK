@@ -36,7 +36,7 @@ function muTotStat(val, label, accent) {
   );
 }
 
-function PlanMenu({ menus = MU_MENUS, totalTitle = "A full day on Muscle UP", showTotal = true, showMacros = true, sub = "Switch between two sample menus — each meal shows its macros, and the daily total updates as you choose." }) {
+function PlanMenu({ menus = MU_MENUS, title = "See a full day of meals", totalTitle = "A full day on Muscle UP", showTotal = true, showMacros = true, sub = "Switch between two sample menus — each meal shows its macros, and the daily total updates as you choose." }) {
   const [idx, setIdx] = React.useState(0);
   const scrollRef = React.useRef(null);
   React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [idx]);
@@ -60,7 +60,7 @@ function PlanMenu({ menus = MU_MENUS, totalTitle = "A full day on Muscle UP", sh
       <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "84px 32px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-start", marginBottom: "36px" }}>
           <span style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--text-faint)" }}>A day on the plan</span>
-          <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "var(--tracking-wide)", lineHeight: 1.05, fontSize: "clamp(28px, 5vw, 40px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>See a full day of meals</h2>
+          <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "var(--tracking-wide)", lineHeight: 1.05, fontSize: "clamp(28px, 5vw, 40px)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>{title}</h2>
           <p style={{ margin: 0, fontSize: "17px", lineHeight: 1.5, color: "var(--text-muted)", maxWidth: "56ch" }}>{sub}</p>
         </div>
 

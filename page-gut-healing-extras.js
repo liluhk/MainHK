@@ -49,7 +49,7 @@ function GutHealingGamble() {
 const GH_MENUS = [
   { label: "A day on the plan", meals: [
     { meal: "Breakfast", img: "assets/meals/gut-breakfast.jpg", title: "Zucchini pancakes with salmon & coconut yogurt", desc: "Rich in omega-3 for anti-inflammatory support. Gentle on digestion, with natural probiotics.", kcal: 364, p: 22, c: 24, f: 20 },
-    { meal: "Lunch", img: "assets/meals/gut-lunch.jpg", title: "Pharmacy bowl", desc: "Fermented vegetables for gut flora, plus fiber from greens, seeds and avocado to boost nutrient absorption.", kcal: 533, p: 41, c: 36, f: 25 },
+    { meal: "Lunch", img: "assets/meals/gut-lunch.jpg", title: "Pharmacy bowl", desc: "Fermented foods for gut flora, plus fiber from greens, seeds and avocado to boost nutrient absorption.", kcal: 533, p: 41, c: 36, f: 25 },
     { meal: "Dinner", img: "assets/meals/gut-dinner.jpg", title: "Konjac pasta bolognese", desc: "Low-carb and light on digestion, with prebiotics for microbiome health — an easy-absorbing, soothing evening meal.", kcal: 434, p: 44, c: 15, f: 22 },
     { meal: "Snack", img: "assets/meals/gut-snack.jpg", title: "Hazelnut cake", desc: "No sugar, no flour — only whole foods. Rich in magnesium for a calming effect and stable blood sugar.", kcal: 278, p: 8, c: 21, f: 18 },
   ] },
@@ -68,8 +68,8 @@ function GutHealingMenu() {
       <section style={{ background: "var(--bg-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
-            {ghStat("1×", "Fermented food every day", true)}
-            {ghStat("25g+", "Gut-feeding fiber per day")}
+            {ghStat("1×", "Fermented food / day", true)}
+            {ghStat("25g+", "Gut-feeding fiber / day")}
             {ghStat("80%", <>Better absorption of<br />vitamins and macronutrients</>)}
             {ghStat("0g", <>Added sugar, gluten, dairy,<br />seed oils</>)}
           </div>

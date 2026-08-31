@@ -74,7 +74,7 @@ function MuscleUpWhy() {
             <span style={{ fontSize: "12px", fontWeight: 500, textTransform: "uppercase", letterSpacing: "var(--tracking-widest)", color: "var(--green-300)" }}>Why Muscle UP</span>
             <h2 style={{ margin: 0, fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-wide)", fontWeight: 400, lineHeight: 1.05, fontSize: "clamp(36px, 5vw, 58px)" }}>
               <span style={{ display: "block", color: "var(--ivory-50)" }}>Fuel built</span>
-              <span style={{ display: "block", color: "var(--green-300)" }}>to rebuild you</span>
+              <span style={{ display: "block", color: "var(--green-300)" }}>to reshape you</span>
             </h2>
           </div>
           <p style={{ margin: 0, fontSize: "16px", lineHeight: 1.6, color: "var(--green-100)", maxWidth: "400px" }}>When digestion is off, protein passes through barely absorbed. Heal the gut first and absorption climbs — so every plate, calibrated to your training load with clean protein, quality carbs and recovery micronutrients, actually reaches the muscle.</p>

@@ -9,7 +9,7 @@ function LongevityEvidence() {
   const items = [
     { n: "01", icon: "utensils", h: "The Mediterranean diet, the most studied diet in the world", p: "Olive oil, fish, legumes, vegetables, whole grains, nuts. Three decades of cohort evidence make this the most rigorously supported pattern of eating we have. We use it as the backbone.", src: "PREDIMED trial — Estruch et al., NEJM 2018, N=7,447" },
     { n: "02", icon: "flask-conical", h: "Valter Longo's longevity nutrition pillars", p: "Dr. Longo runs the Longevity Institute at USC. TIME named him one of the 50 most influential people in healthcare in 2018. His framework — pescatarian-leaning, lower animal protein under 65, 12-hour eating window, legumes daily — informs the structural logic of the plan.", src: "Longo, V.D., USC Longevity Institute." },
-    { n: "03", icon: "globe", h: "Blue Zones, the populations that live longest", p: "Sardinia, Ikaria, Okinawa, Nicoya, Loma Linda. The common thread isn't a single nutrient. It's daily beans, leafy greens, nuts, modest fish, almost no refined sugar.", src: "Dan Buettner / National Geographic. Peer-reviewed work on Sardinian centenarians." },
+    { n: "03", icon: "globe", h: "Blue Zones, the populations that live longest", p: "Sardinia, Ikaria, Okinawa, Nicoya, Loma Linda. The common thread isn't a single nutrient. It's daily leafy greens, nuts, modest fish, and no refined sugar.", src: "Dan Buettner / National Geographic. Peer-reviewed work on Sardinian centenarians." },
     { n: "04", icon: "sprout", h: "Plant diversity, measured", p: "The largest open microbiome study ever conducted (11,000+ participants) found that people who ate 30+ different plant species per week had measurably more diverse gut microbiomes. Our weekly menu rotates through 35+. We print the count on your menu.", src: "McDonald et al., mSystems (ASM), 2018." },
   ];
   return (
@@ -51,17 +51,17 @@ const LG_MENUS = [
   { label: "A day on the plan", meals: [
     { meal: "Breakfast", img: "assets/meals/longevity-breakfast.jpg", title: "Potato waffle with smoked salmon & egg", desc: "Cured salmon, jammy egg and a potato waffle under herbed coconut yoghurt — omega-3 forward and blood-sugar friendly.", kcal: 391, p: 25, c: 30, f: 19 },
     { meal: "Lunch", img: "assets/meals/longevity-lunch.jpg", title: "Beetroot summer salad with mango & prawns", desc: "Wild greens, sweet beets, mango and pumpkin seeds with poached prawns — polyphenol-rich and Blue Zone inspired.", kcal: 500, p: 44, c: 29, f: 23 },
-    { meal: "Dinner", img: "assets/meals/longevity-dinner.jpg", title: "Miso salmon with sweet potato & broccoli", desc: "Caramelised sweet potato and steamed broccoli with organic miso salmon. Plant-forward comfort.", kcal: 513, p: 40, c: 32, f: 25 },
+    { meal: "Dinner", img: "assets/meals/longevity-dinner.jpg", title: "Wild miso salmon with sweet potato & broccoli", desc: "Wild-caught salmon brings the omega-3s longevity research keeps pointing to, with caramelised sweet potato and steamed broccoli.", kcal: 513, p: 40, c: 32, f: 25 },
     { meal: "Snack 1", img: "assets/meals/longevity-snack-1.jpg", title: "Rich chocolate cake with raw cacao & raspberry", desc: "A dense almond-flour cake with raw cacao ganache and fresh raspberries — naturally sweetened, no refined sugar.", kcal: 202, p: 6, c: 13, f: 14 },
-    { meal: "Snack 2", img: "assets/meals/longevity-snack-2.jpg", title: "Homemade hummus with vegetable sticks", desc: "Silky chickpea hummus, good olive oil and smoked paprika with crisp carrot, cucumber and celery. Fiber and good fats.", kcal: 201, p: 10, c: 29, f: 5 },
+    { meal: "Snack 2", img: "assets/meals/longevity-snack-2.jpg", title: "Homemade hummus with vegetable sticks", desc: "Silky chickpea hummus, extra virgin olive oil and smoked paprika with crisp carrot, cucumber and celery. Fiber and good fats.", kcal: 201, p: 10, c: 29, f: 5 },
   ] },
 ];
 
 function LongevityMenu() {
   const lgStat = (val, label, accent) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "3px", alignItems: "flex-start", flex: "1 1 0", minWidth: "150px" }}>
+    <div className="hk-lg-stat" style={{ display: "flex", flexDirection: "column", gap: "3px", alignItems: "flex-start", flex: "1 1 0", minWidth: "150px" }}>
       <span style={{ fontFamily: "var(--font-display)", fontSize: accent ? "44px" : "38px", lineHeight: 1, color: "var(--ivory-50)" }}>{val}</span>
-      <span style={{ fontFamily: "var(--font-body)", fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--green-200)" }}>{label}</span>
+      <span className="hk-lg-stat-label" style={{ fontFamily: "var(--font-body)", fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--green-200)" }}>{label}</span>
     </div>
   );
   return (
@@ -69,8 +69,8 @@ function LongevityMenu() {
       <PlanMenu menus={LG_MENUS} showTotal={false} sub="A sample day from the plan — each meal shows its macros and why it earns its place." />
       <section style={{ background: "var(--bg-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
-            {lgStat("35+", "Plant species per week", true)}
+          <div className="hk-lg-band" style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
+            {lgStat("35+", "Plant species / week", true)}
             {lgStat("30–45ml", "Extra virgin olive oil / day")}
             {lgStat("3×", "Omega-3 rich foods / week")}
             {lgStat("0g", "Added sugar, gluten, dairy, seed oils")}
@@ -91,7 +91,7 @@ function LongevityFoods() {
     { icon: "cherry", h: "Berries", p: "Anthocyanins that support memory and tame oxidative stress." },
     { icon: "fish", h: "Fatty fish", p: "Omega-3s for heart rhythm, blood vessels and cognition." },
     { icon: "wheat", h: "Whole grains", p: "Intact fiber for steady glucose and a well-fed microbiome." },
-    { icon: "sprout", h: "Fermented vegetables", p: "Live cultures that keep the gut ecosystem diverse." },
+    { icon: "sprout", h: "Fermented foods", p: "Live cultures that keep the gut ecosystem diverse." },
   ];
   React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, []);
   return (

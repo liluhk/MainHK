@@ -70,8 +70,8 @@ function AutoimmuneMenu() {
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {aipStat("8", "Food groups eliminated", true)}
-            {aipStat("30+", <>Plants every week</>)}
-            {aipStat("100%", <>AIP-compliant meals,<br />every single day</>)}
+            {aipStat("30+", "Plants / week")}
+            {aipStat("100%", <>AIP-compliant meals<br />/ day</>)}
             {aipStat("0", <>Immune triggers<br />on your plate</>)}
           </div>
         </div>
@@ -114,7 +114,7 @@ function AutoimmunePhases() {
               <span style={{ display: "block", fontFamily: "var(--font-display)", color: "var(--green-300)" }}>framework works</span>
             </h2>
           </div>
-          <p style={{ margin: 0, fontSize: "16px", lineHeight: 1.6, color: "var(--green-100)", maxWidth: "380px" }}>The Autoimmune Protocol has three phases. We deliver the even elimination phase — the strictest part, and the one that's hardest to sustain alone.</p>
+          <p style={{ margin: 0, fontSize: "16px", lineHeight: 1.6, color: "var(--green-100)", maxWidth: "380px" }}>The Autoimmune Protocol has three phases. We deliver even the elimination phase — the strictest part, and the one that's hardest to sustain alone.</p>
         </div>
 
         <div className="hk-muscleacc" role="tablist" aria-label="How the AIP framework works" onMouseLeave={() => setPaused(false)} style={{ display: "flex", gap: "14px", alignItems: "stretch" }}>
@@ -163,7 +163,7 @@ function AutoimmunePhases() {
           <span style={{ fontSize: "12px", letterSpacing: "var(--tracking-wider)", color: "var(--green-200)" }}>{items[active].n} / {String(items.length).padStart(2, "0")}</span>
         </div>
 
-        <p style={{ margin: "26px 0 0", fontSize: "15px", lineHeight: 1.6, color: "var(--green-100)", textAlign: "center" }}>When you're ready to reintroduce, our nutrition experts help you plan it — as part of your protocol, not as an upsell.</p>
+        <p className="hk-aip-note" style={{ margin: "26px 0 0", fontSize: "15px", lineHeight: 1.6, color: "var(--green-100)", textAlign: "center" }}><span className="hk-aip-l1">When you're ready to reintroduce, our nutrition experts</span>{" "}<span className="hk-aip-l2">help you plan it — as part of your protocol, not as an upsell.</span></p>
       </div>
     </section>
   );

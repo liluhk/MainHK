@@ -158,3 +158,60 @@
   .hk-footer-brand { grid-column: 1 / -1; }
   .hk-footer-col:last-of-type { grid-column: 1 / -1; }
 }
+
+/* ---------- Why Choose Us: stacked accordion cards on mobile ---------- */
+.hk-why-inline { display: none; }
+@media (max-width: 760px) {
+  .hk-why-grid { gap: 26px !important; }
+  .hk-why-visual { display: none !important; }
+  .hk-why-right { min-height: 0 !important; gap: 22px !important; }
+  .hk-why-tabs { gap: 12px !important; }
+  .hk-why-tab {
+    position: relative; display: grid !important; grid-template-columns: 34px 1fr !important;
+    gap: 8px 12px !important; align-items: center !important;
+    padding: 16px 52px 16px 16px !important; margin: 0 !important;
+    background: rgba(253,252,248,0.02) !important;
+    border: 1px solid rgba(253,252,248,0.18) !important;
+    border-radius: var(--radius-lg) !important; transform: none !important;
+  }
+  .hk-why-tab[aria-selected="true"] { background: rgba(253,252,248,0.09) !important; }
+  .hk-why-tab > span:nth-of-type(2) { opacity: 1 !important; font-size: 19px !important; }
+  .hk-why-tab > span:nth-of-type(3) { display: none !important; }
+  .hk-why-tab::after {
+    content: "+"; position: absolute; right: 14px; top: 14px; width: 28px; height: 28px;
+    border-radius: 999px; border: 1px solid rgba(253,252,248,0.35); display: flex;
+    align-items: center; justify-content: center; font-size: 17px; line-height: 1;
+    color: var(--ivory-50); opacity: 0.8;
+  }
+  .hk-why-tab[aria-selected="true"]::after { content: "\2013"; background: rgba(253,252,248,0.18); opacity: 1; }
+  .hk-why-inline { display: block; }
+}
+
+@media (max-width: 760px) {
+  .hk-why-tab { overflow: hidden !important; }
+  .hk-why-tab-icon { display: block !important; }
+  .hk-why-tab .hk-why-inline, .hk-why-tab > span:nth-of-type(1), .hk-why-tab > span:nth-of-type(2) { position: relative; z-index: 1; }
+}
+.hk-why-tab-icon { display: none; }
+
+/* ---------- Plan page hero: tighter gap before next section ---------- */
+@media (max-width: 1024px) {
+  .hk-plan-hero { padding-bottom: 36px !important; }
+}
+@media (max-width: 640px) {
+  .hk-plan-hero { padding-bottom: 22px !important; }
+}
+
+/* ---------- Longevity stat band: one-line labels on mobile ---------- */
+@media (max-width: 640px) {
+  .hk-lg-band { gap: 18px 14px !important; padding: 20px 18px !important; }
+  .hk-lg-stat { min-width: 0 !important; flex: 1 1 calc(50% - 8px) !important; }
+  .hk-lg-stat-label { font-size: 10px !important; letter-spacing: 0.05em !important; white-space: normal !important; line-height: 1.3; }
+  .hk-lg-stat > span:first-child { font-size: 30px !important; }
+}
+
+/* ---------- AIP closing note: balanced two-line wrap on mobile ---------- */
+@media (max-width: 640px) {
+  .hk-aip-note { font-size: 11px !important; line-height: 1.5 !important; }
+  .hk-aip-l1, .hk-aip-l2 { display: block; white-space: nowrap; }
+}

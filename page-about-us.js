@@ -201,8 +201,9 @@ function AboutCta({ onExplore }) {
     <section style={{ background: "var(--surface-card)", borderTop: "1px solid var(--border-subtle)" }}>
       <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "92px 32px", display: "flex", flexDirection: "column", alignItems: "center", gap: "26px", textAlign: "center" }}>
         <span style={{ fontFamily: "var(--font-script)", fontSize: "clamp(30px, 4vw, 42px)", color: "var(--green-700)", lineHeight: 1 }}>our promise</span>
-        <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "var(--tracking-wide)", fontSize: "clamp(30px, 5vw, 50px)", lineHeight: "var(--leading-tight)", color: "var(--text-strong)", maxWidth: "20ch" }}>
-          We make your life easier and your body healthier
+        <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "var(--tracking-wide)", fontSize: "clamp(30px, 5vw, 50px)", lineHeight: "var(--leading-tight)", color: "var(--text-strong)", maxWidth: "24ch" }}>
+          <span style={{ display: "block" }}>We make your life easier</span>
+          <span style={{ display: "block" }}>and your body healthier</span>
         </h2>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
           <Button variant="primary" size="lg" onClick={onExplore}>Explore Meal Plans</Button>

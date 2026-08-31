@@ -71,7 +71,7 @@ function AnticandidaMenu() {
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {acStat("0g", "Added sugar — nothing for candida to feed on", true)}
             {acStat("Daily", "Antifungal ingredients: garlic, coconut oil, oregano")}
-            {acStat("1×", "Fermented, probiotic-rich food every day")}
+            {acStat("1×", "Fermented, probiotic-rich food / day")}
             {acStat("Low-GI", "Only low-sugar fruits and slow carbs")}
           </div>
         </div>
