@@ -71,7 +71,7 @@ function DetoxCleanseMenu() {
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
             {dcStat("85%", "Vegetable content", true)}
-            {dcStat("20+g", "Gut-restoring fiber / day")}
+            {dcStat("20+g", "Gut-restoring fiber / day")}
             {dcStat("100%", "Vegan, freshly squeezed")}
             {dcStat("0g", "Added sugar")}
           </div>

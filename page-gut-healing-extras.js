@@ -68,8 +68,8 @@ function GutHealingMenu() {
       <section style={{ background: "var(--bg-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="hk-container" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px 84px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap", background: "var(--green-700)", color: "var(--ivory-50)", borderRadius: "var(--radius-lg)", padding: "24px 30px" }}>
-            {ghStat("1×", "Fermented food / day", true)}
-            {ghStat("25g+", "Gut-feeding fiber / day")}
+            {ghStat("1×", "Fermented food / day", true)}
+            {ghStat("25g+", "Gut-feeding fiber / day")}
             {ghStat("80%", <>Better absorption of<br />vitamins and macronutrients</>)}
             {ghStat("0g", <>Added sugar, gluten, dairy,<br />seed oils</>)}
           </div>
