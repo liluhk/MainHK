@@ -30,7 +30,7 @@ function MealPlans({ onSelect }) {
   }, [update]);
 
   // keep arrow icons rendered after state-driven re-renders
-  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); });
+  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [atStart, atEnd]);
 
   const scrollBy = (dir) => {
     const el = railRef.current;
@@ -60,8 +60,8 @@ function MealPlans({ onSelect }) {
   );
 
   return (
-    <section id="meal-plans" style={{ background: "var(--bg-subtle)", borderTop: "1px solid var(--border-subtle)", overflow: "hidden" }}>
-      <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "84px 0" }}>
+    <section id="meal-plans" className="hk-plans-section" style={{ background: "var(--bg-subtle)", borderTop: "1px solid var(--border-subtle)", overflow: "hidden" }}>
+      <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 0 84px" }}>
         <div className="hk-container" style={{ padding: "0 32px", marginBottom: "36px" }}>
           <SectionHeading eyebrow="Our menus" title="Meal Plans Built Around You" align="left">
             Medically-tailored plans for gut healing, longevity, detox and performance — chef-made and delivered to your door.

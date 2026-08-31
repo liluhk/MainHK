@@ -129,6 +129,14 @@
   .hk-muscleacc-panel h3 { font-size: 20px !important; }
 }
 
+/* ---------- Quote strip → Meal plans spacing ---------- */
+@media (max-width: 1024px) {
+  .hk-plans-section > div { padding-top: 44px !important; }
+}
+@media (max-width: 640px) {
+  .hk-plans-section > div { padding-top: 30px !important; }
+}
+
 /* ---------- Quote strip ---------- */
 @media (max-width: 640px) {
   .hk-quote > div { padding: 20px 12px !important; gap: 10px !important; }
@@ -177,13 +185,6 @@
   .hk-why-tab[aria-selected="true"] { background: rgba(253,252,248,0.09) !important; }
   .hk-why-tab > span:nth-of-type(2) { opacity: 1 !important; font-size: 19px !important; }
   .hk-why-tab > span:nth-of-type(3) { display: none !important; }
-  .hk-why-tab::after {
-    content: "+"; position: absolute; right: 14px; top: 14px; width: 28px; height: 28px;
-    border-radius: 999px; border: 1px solid rgba(253,252,248,0.35); display: flex;
-    align-items: center; justify-content: center; font-size: 17px; line-height: 1;
-    color: var(--ivory-50); opacity: 0.8;
-  }
-  .hk-why-tab[aria-selected="true"]::after { content: "\2013"; background: rgba(253,252,248,0.18); opacity: 1; }
   .hk-why-inline { display: block; }
 }
 
@@ -211,8 +212,17 @@
 }
 
 @media (max-width: 760px) {
-  /* Fixed reveal height keeps the section's total height constant while the cards auto-advance. */
-  .hk-why-inline { height: 0; transition: height 0.5s var(--ease-out), opacity 0.4s ease 0.12s !important; }
-  .hk-why-tab[aria-selected="true"] .hk-why-inline { max-height: 168px !important; height: 168px !important; }
+  /* The reveal area is reserved in EVERY card, so opening one changes no height at all —
+     only the copy fades in. Auto-advance therefore can never shift the page. */
+  /* Accordion again — but the open body is ALWAYS exactly 152px and the closing card
+     shrinks with the identical timing, so the two cancel out: total height never changes. */
+  .hk-why-inline { max-height: none !important; height: 0 !important; overflow: hidden; opacity: 0; transition: height 0.4s linear, opacity 0.3s ease !important; }
+  .hk-why-tab[aria-selected="true"] .hk-why-inline { height: 152px !important; opacity: 1; }
   .hk-why-inline p:last-child { font-size: 14px !important; }
+  .hk-why-tab { padding: 16px !important; align-items: start !important; }
+}
+
+/* ---------- Kill sideways jitter from marquees / rotated cards on mobile ---------- */
+@media (max-width: 900px) {
+  html, body { overflow-x: hidden; max-width: 100%; }
 }
