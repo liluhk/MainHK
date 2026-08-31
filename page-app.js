@@ -75,7 +75,11 @@ function App() {
 
   const scrollToPlans = () => {
     const el = document.getElementById("meal-plans");
-    if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+    if (!el) return;
+    const header = document.querySelector("header");
+    const offset = (header ? header.getBoundingClientRect().height : 0) + 8;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   };
 
   const showToast = (message) => {
@@ -86,7 +90,7 @@ function App() {
 
   const handleNav = (label) => {
     if (label === "Meal Plans") {
-      if (route.name !== "home") { setRoute({ name: "home" }); setTimeout(scrollToPlans, 60); }
+      if (route.name !== "home") { setRoute({ name: "home" }); setTimeout(scrollToPlans, 220); }
       else scrollToPlans();
     } else if (label === "Blog") {
       setRoute({ name: "blog" }); window.scrollTo({ top: 0 });
@@ -150,7 +154,7 @@ function App() {
     setItems([]);
   };
 
-  const explore = () => { setDrawerOpen(false); if (route.name !== "home") setRoute({ name: "home" }); setTimeout(scrollToPlans, 80); };
+  const explore = () => { setDrawerOpen(false); if (route.name !== "home") setRoute({ name: "home" }); setTimeout(scrollToPlans, 220); };
 
   return (
     <>
